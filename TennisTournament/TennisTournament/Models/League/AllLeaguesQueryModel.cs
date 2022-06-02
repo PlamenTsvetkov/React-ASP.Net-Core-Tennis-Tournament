@@ -1,6 +1,6 @@
-﻿namespace TennisTournament.Services.Leagues.Models
+﻿namespace TennisTournament.Models.League
 {
-    public class LeagueServiceModel
+    public class AllLeaguesQueryModel
     {
         public int Id { get; init; }
 

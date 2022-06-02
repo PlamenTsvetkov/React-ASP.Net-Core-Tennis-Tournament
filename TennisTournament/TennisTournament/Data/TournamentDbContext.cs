@@ -24,7 +24,7 @@
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(Configuration.ConnectionString);
+                optionsBuilder.UseSqlServer("Server=.;Database=TennisTournament;Integrated Security=True;");
             }
         }
         protected override void OnModelCreating(ModelBuilder builder)
