@@ -8,8 +8,8 @@
 
         Player Create(string name);
 
-        Task UpdateAsync(int id, string name);
+        bool Update(int id, string name);
 
-        Task DeleteAsync(int id);
+        bool Delete(int id);
     }
 }

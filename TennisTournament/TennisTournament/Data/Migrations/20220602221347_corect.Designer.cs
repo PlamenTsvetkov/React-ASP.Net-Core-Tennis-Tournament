@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TennisTournament.Data;
 
@@ -10,9 +11,10 @@ using TennisTournament.Data;
 namespace TennisTournament.Data.Migrations
 {
     [DbContext(typeof(TournamentDbContext))]
-    partial class TournamentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220602221347_corect")]
+    partial class corect
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -76,10 +78,6 @@ namespace TennisTournament.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("PhotoFileName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

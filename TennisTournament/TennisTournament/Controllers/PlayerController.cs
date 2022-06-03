@@ -38,14 +38,14 @@
         [HttpPut]
         public JsonResult Put(PlayerInputUpdateModel player)
         {
-            playerservice.UpdateAsync(player.Id, player.Name);
+            playerservice.Update(player.Id, player.Name);
             return new JsonResult("Updated Successfully");
         }
 
         [HttpDelete("{id}")]
         public JsonResult Delete(int id)
         {
-            playerservice.DeleteAsync(id);
+            playerservice.Delete(id);
 
             return new JsonResult("Deleted Successfully");
         }

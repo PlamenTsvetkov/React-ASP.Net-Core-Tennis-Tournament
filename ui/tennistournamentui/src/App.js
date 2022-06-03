@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { Home } from './Home';
 import { League } from './League';
@@ -34,12 +34,10 @@ function App() {
         </nav>
 
         <Routes>
-          {/* <Route path='/home' component={Home} />
-          <Route path='/league' component={League} />
-          <Route path='/player' component={Player} /> */}
+          <Route path='/*' element={<Home />} />
           <Route path='home/*' element={<Home />} />
-        <Route path='league/*' element={<League />} />
-        <Route path='player/*' element={<Player />} />
+          <Route path='league/*' element={<League />} />
+          <Route path='player/*' element={<Player />} />
         </Routes>
       </div>
     </BrowserRouter>

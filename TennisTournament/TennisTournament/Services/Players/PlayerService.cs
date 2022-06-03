@@ -39,18 +39,19 @@
             return playerDate;
         }
 
-        public async Task DeleteAsync(int id)
+        public bool Delete(int id)
         {
-            var player = this.db.Players.FirstOrDefault(p => p.Id == id);
+            var player = this.db.Players.FirstOrDefault(l => l.Id == id);
 
             if (player == null)
             {
-                return;
+                return false;
             }
 
             this.db.Players.Remove(player);
 
-            await this.db.SaveChangesAsync();
+             this.db.SaveChanges();
+            return true;
         }
 
         public IEnumerable<T> GetAll<T>(int? count = null)
@@ -67,18 +68,22 @@
             return query.ProjectTo<T>(this.mapper.ConfigurationProvider).ToList();
         }
 
-        public async Task UpdateAsync(int id, string name)
+        public bool Update(int id, string name)
         {
             var player = this.db.Leagues.FirstOrDefault(p => p.Id == id);
 
             if (player == null)
             {
-                return;
+                return false;
             }
 
             player.Name = name;
 
-            await this.db.SaveChangesAsync();
+            this.db.SaveChangesAsync();
+
+            return true;
         }
+
+
     }
 }
